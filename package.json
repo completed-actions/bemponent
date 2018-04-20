@@ -1,0 +1,28 @@
+{
+  "name": "bemponent",
+  "version": "0.1.0",
+  "description": "Обертка над React компонентом для создания className по методологии bemponent",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/completed-actions/bemponent.git"
+  },
+  "keywords": [
+    "bemponent",
+    "react",
+    "component"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/completed-actions/bemponent/issues"
+  },
+  "homepage": "https://github.com/completed-actions/bemponent#readme",
+  "dependencies": {
+    "lodash": "^4.17.5",
+    "react": "^16.3.2"
+  }
+}
