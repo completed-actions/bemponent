@@ -64,6 +64,11 @@ var Component = function (_ReactComponent) {
             });
         }
     }, {
+        key: 'toFirstUpperCase',
+        value: function toFirstUpperCase(str) {
+            return str[0].toUpperCase() + str.substring(1, str.length);
+        }
+    }, {
         key: 'genClassName',
         value: function genClassName() {
             var _props = this.props,
@@ -71,7 +76,8 @@ var Component = function (_ReactComponent) {
                 parent = _props.parent,
                 props = this.props,
                 getModDeps = this.getModDeps,
-                name = this.constructor.name;
+                name = this.constructor.name,
+                toFirstUpperCase = this.toFirstUpperCase;
 
 
             var mods = this.getStateMods();
@@ -80,13 +86,16 @@ var Component = function (_ReactComponent) {
 
             var componentMods = _extends({}, props, mods);
 
-            var className = modDeps.reduce(function (str, mod) {
-                var modVal = componentMods[mod];
+            var className = modDeps.reduce(function (str, dep) {
+                var mod = {
+                    key: toFirstUpperCase(dep),
+                    val: toFirstUpperCase(componentMods[dep])
+                };
 
-                if (modVal === true) {
-                    return str + ' ' + name + '_' + mod;
-                } else if (modVal) {
-                    return str + ' ' + name + '_' + mod + '_' + modVal;
+                if (mod.val === true) {
+                    return str + ' ' + name + '_' + mod.key;
+                } else if (mod.val) {
+                    return str + ' ' + name + '_' + mod.key + '_' + mod.val;
                 }
 
                 return str;
