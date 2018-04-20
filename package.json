@@ -1,6 +1,6 @@
 {
   "name": "bemponent",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Обертка над React компонентом для создания className по методологии bemponent",
   "main": "./dist/index.js",
   "scripts": {

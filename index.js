@@ -34,7 +34,8 @@ class Component extends ReactComponent {
             props: {clx, parent},
             props,
             getModDeps,
-            constructor: {name}
+            constructor: {name},
+            toFirstUpperCase
         } = this;
 
         const mods = this.getStateMods();
@@ -46,8 +47,8 @@ class Component extends ReactComponent {
 
         let className = modDeps.reduce((str, dep) => {
             const mod = {
-                key: this.toFirstUpperCase(dep),
-                val: this.toFirstUpperCase(componentMods[dep])
+                key: toFirstUpperCase(dep),
+                val: toFirstUpperCase(componentMods[dep])
             }
 
             if (mod.val === true) {
