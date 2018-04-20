@@ -25,6 +25,10 @@ class Component extends ReactComponent {
             .map(([key, val]) => key);
     }
 
+    toFirstUpperCase(str) {
+        return str[0].toUpperCase() + str.substring(1, str.length);
+    }
+
     genClassName() {
         const {
             props: {clx, parent},
@@ -40,13 +44,16 @@ class Component extends ReactComponent {
         const componentMods = {...props, ...mods};
 
 
-        let className = modDeps.reduce((str, mod) => {
-            const modVal = componentMods[mod];
+        let className = modDeps.reduce((str, dep) => {
+            const mod = {
+                key: this.toFirstUpperCase(dep),
+                val: this.toFirstUpperCase(componentMods[dep])
+            }
 
             if (modVal === true) {
-                return `${str} ${name}_${mod}`
+                return `${str} ${name}_${mod.key}`
             } else if (modVal) {
-                return `${str} ${name}_${mod}_${modVal}`
+                return `${str} ${name}_${mod.key}_${mod.val}`
             }
 
             return str;
