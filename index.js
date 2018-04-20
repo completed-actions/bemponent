@@ -50,9 +50,9 @@ class Component extends ReactComponent {
                 val: this.toFirstUpperCase(componentMods[dep])
             }
 
-            if (modVal === true) {
+            if (mod.val === true) {
                 return `${str} ${name}_${mod.key}`
-            } else if (modVal) {
+            } else if (mod.val) {
                 return `${str} ${name}_${mod.key}_${mod.val}`
             }
 
