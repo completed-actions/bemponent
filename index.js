@@ -1,14 +1,23 @@
 import React, {Component as ReactComponent} from 'react';
-import {merge} from 'lodash';
-
 
 class Component extends ReactComponent {
     constructor() {
         super();
     }
 
+    getStateMods() {
+        let mods = {};
+
+        if (this.state && this.state.mods) {
+            mods = this.state.mods;
+        }
+
+        return mods;
+    }
+
     getModDeps() {
-        const {mods} = this.state;
+        const mods = this.getStateMods();
+
         const modKeyValues = Object.entries(mods);
 
         return modKeyValues
@@ -21,9 +30,10 @@ class Component extends ReactComponent {
             props: {clx, parent},
             props,
             getModDeps,
-            constructor: {name},
-            state: {mods}
+            constructor: {name}
         } = this;
+
+        const mods = this.getStateMods();
 
         const modDeps = getModDeps.call(this);
 
@@ -34,9 +44,9 @@ class Component extends ReactComponent {
             const modVal = componentMods[mod];
 
             if (modVal === true) {
-                return str + ` ${name}_${mod}`
+                return `${str} ${name}_${mod}`
             } else if (modVal) {
-                return str + ` ${name}_${mod}_${modVal}`
+                return `${str} ${name}_${mod}_${modVal}`
             }
 
             return str;
