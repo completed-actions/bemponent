@@ -44,8 +44,15 @@ class Component extends ReactComponent {
 
         const componentMods = {...props, ...mods};
 
+        const modsKeysSet = [...modDeps]
+            .filter(
+                (dep) => componentMods.hasOwnProperty(dep)
+            );
 
-        let className = modDeps.reduce((str, dep) => {
+
+
+
+        let className = modsKeysSet.reduce((str, dep) => {
             const mod = {
                 key: toFirstUpperCase(dep),
                 val: toFirstUpperCase(componentMods[dep])
