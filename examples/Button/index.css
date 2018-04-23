@@ -1,0 +1,18 @@
+.Button {
+    font-family: inherit;
+    text-align: center;
+}
+.Button_Size_L {
+    line-height: 36px;
+    height: 36px;
+}
+.Button_Size_M {
+    line-height: 36px;
+    height: 40px;
+}
+.Button_Theme_Primary {
+    background-color: red;
+}
+.Button_Theme_Secondary {
+    background-color: grey;
+}
