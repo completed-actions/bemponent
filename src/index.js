@@ -1,6 +1,6 @@
-import React, {Component as ReactComponent} from 'react';
+import React from 'react';
 
-class Component extends ReactComponent {
+class Component extends React.Component {
     constructor() {
         super();
     }
@@ -75,4 +75,6 @@ class Component extends ReactComponent {
     }
 }
 
-export default Component;
+const Bemponent = { Component }
+
+module.exports = Bemponent;

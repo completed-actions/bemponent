@@ -1,4 +1,3 @@
-
 class Button extends Bemponent.Component {
     getModDeps() {
       return [...super.getModDeps(), "theme", "size"];

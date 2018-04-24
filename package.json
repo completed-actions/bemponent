@@ -1,12 +1,11 @@
 {
   "name": "bemponent",
-  "version": "0.1.7",
+  "version": "0.1.8-beta11",
   "description": "Обертка над React компонентом для создания className по методологии bemponent",
-  "main": "./dist/index.js",
+  "main": "./dist/bemponent.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "babel --presets env,stage-2 -d ./dist ./index.js",
-    "compile:cdn": "babel --presets env,stage-2 -d ./dist ./index.cdn.js"
+    "prod": "webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -23,11 +22,12 @@
     "url": "https://github.com/completed-actions/bemponent/issues"
   },
   "homepage": "https://github.com/completed-actions/bemponent#readme",
-  "dependencies": {
-    "babel": "^6.23.0",
-    "babel-cli": "^6.26.0",
+  "devDependencies": {
+    "react": "^16.3.2",
+    "babel-loader": "^7.1.4",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.15",
     "babel-preset-env": "^1.6.1",
-    "babel-preset-stage-2": "^6.24.1",
-    "react": "^16.3.2"
+    "babel-preset-stage-2": "^6.24.1"
   }
 }
