@@ -16,12 +16,5 @@ module.exports = {
         use: 'babel-loader'
       }
     ]
-  },
-  externals: {
-    react: {
-      commonjs: 'react',
-      commonjs2: 'react',
-      amd: 'react'
-    }
   }
 }
