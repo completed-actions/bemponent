@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Bemponent extends React.Component {
+class Component extends React.Component {
     constructor() {
         super();
     }
@@ -74,5 +74,7 @@ class Bemponent extends React.Component {
         return className;
     }
 }
+
+const Bemponent = { Component }
 
 module.exports = Bemponent;
